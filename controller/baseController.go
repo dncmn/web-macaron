@@ -45,5 +45,6 @@ func GetUserByUIDHandler(c *macaron.Context) {
 	cnt, _ := json.Marshal(resp)
 	c.Resp.WriteHeader(http.StatusOK)
 	c.Resp.Write([]byte(cnt))
+
 	return
 }
