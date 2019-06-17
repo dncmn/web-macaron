@@ -8,6 +8,7 @@ import (
 
 func main() {
 	m := macaron.Classic()
+	m.Use(macaron.Renderer())
 	m.Get("/", func() string {
 		return "helloWorld"
 	})

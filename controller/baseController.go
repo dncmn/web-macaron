@@ -7,6 +7,7 @@ import (
 	"gopkg.in/macaron.v1"
 )
 
+// BindXml: parse requestBody into resp by xml
 func BindXml(c *macaron.Context, resp interface{}) (err error) {
 	var (
 		cntBytes []byte
@@ -25,6 +26,7 @@ func BindXml(c *macaron.Context, resp interface{}) (err error) {
 	return
 }
 
+// BindJson: parse requestBody into resp by json
 func BindJson(c *macaron.Context, resp interface{}) (err error) {
 	var (
 		cntBytes []byte

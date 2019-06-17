@@ -32,7 +32,7 @@ func UserRegisterHancler(c *macaron.Context) {
 		return
 	}
 	fmt.Printf("username=%v,age=%v,all=%v\n", req.Name, req.Age, req)
-	c.Resp.Write([]byte(req.Name))
+	c.JSON(http.StatusOK, req)
 	return
 }
 
