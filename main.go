@@ -15,7 +15,9 @@ func main() {
 	m.Group("/user", func() {
 		m.Get("/username", controller.GetUserInfoHandler)
 		m.Get("/userByUID/:uid", controller.GetUserByUIDHandler)
+		m.Post("", controller.UserRegisterHancler)
+
 	})
 	m.Group("/c", router.UserRouter)
-	m.Run()
+	m.Run("localhost", 9002)
 }

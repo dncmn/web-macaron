@@ -9,6 +9,12 @@
 			"revisionTime": "2019-03-21T03:55:13Z"
 		},
 		{
+			"checksumSHA1": "kyJBUP8tfMWSDwFfSBppIHiGmUY=",
+			"path": "github.com/dncmn/com",
+			"revision": "d86ccd57f0ac0a1f5f7a959f56b08d2d074a6c4c",
+			"revisionTime": "2019-06-17T03:07:37Z"
+		},
+		{
 			"checksumSHA1": "y0olVbiMQ6/UOa/eh52XYnies90=",
 			"path": "github.com/go-macaron/inject",
 			"revision": "d8a0b8677191f4380287cfebd08e462217bac7ad",

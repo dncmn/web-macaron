@@ -2,49 +2,42 @@ package controller
 
 import (
 	"encoding/json"
-	"errors"
+	"encoding/xml"
 	"fmt"
 	"gopkg.in/macaron.v1"
-	"net/http"
-	"strings"
 )
 
-func GetUserInfoHandler(c *macaron.Context) {
+func BindXml(c *macaron.Context, resp interface{}) (err error) {
 	var (
-		err error
-		sex int64
+		cntBytes []byte
 	)
-
-	sex = c.QueryInt64("sex")
-
-	fmt.Printf("request addr=%v,sex=%v\n", c.Req.RemoteAddr, sex)
-	_, err = c.Resp.Write([]byte(c.Req.RemoteAddr))
+	fmt.Printf("start parse param url[%s] into [%v]\n", c.Req.RequestURI, resp)
+	cntBytes, err = c.Req.Body().Bytes()
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("read content from url[%v],err[]%v\n", c.Req.RequestURI, err)
+		return
+	}
+	err = xml.Unmarshal(cntBytes, &resp)
+	if err != nil {
+		fmt.Printf("[Bind Xml error: url=%s,errInfo=%s]\n", c.Req.RequestURI, err.Error())
 		return
 	}
 	return
 }
 
-func GetUserByUIDHandler(c *macaron.Context) {
+func BindJson(c *macaron.Context, resp interface{}) (err error) {
 	var (
-		uid string
-		err error
+		cntBytes []byte
 	)
-	uid = c.Params("uid")
-	if len(strings.TrimSpace(uid)) == 0 {
-		err = errors.New("param error")
-		fmt.Println(err)
+	fmt.Printf("start parse param url[%s] into [%v]\n", c.Req.RequestURI, resp)
+	cntBytes, err = c.Req.Body().Bytes()
+	if err != nil {
+		fmt.Printf("read content from url[%v],err[]%v\n", c.Req.RequestURI, err)
 		return
 	}
-	fmt.Printf("uid=%v\n", uid)
-	resp := map[string]interface{}{
-		"uid": uid,
+	err = json.Unmarshal(cntBytes, &resp)
+	if err != nil {
+		fmt.Printf("[Bind Json error: url=[%s] errorInfo[%s]]\n", c.Req.RequestURI, err.Error())
 	}
-
-	cnt, _ := json.Marshal(resp)
-	c.Resp.WriteHeader(http.StatusOK)
-	c.Resp.Write([]byte(cnt))
-
 	return
 }
