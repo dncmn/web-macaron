@@ -60,12 +60,12 @@ func TestGetGetDB(t *testing.T) {
 	//fmt.Println(l2)
 	//
 	//// 测试获取所有的部门的名字
-	//names, err := dao.GetAllDeptNames()
-	//if err != nil {
-	//	fmt.Println(err)
-	//	return
-	//}
-	//fmt.Println(names)
+	names, err := dao.GetAllDeptNames()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(names)
 	//
 	//// 获取某一个部门的信息
 	//resp, err := dao.GetDeptInfoByName("体育部")
@@ -102,16 +102,16 @@ func TestGetGetDB(t *testing.T) {
 
 	// update aimed column
 	//dept := model.ConfigDept{}
-	////dept.ID = 2
-	////dept.Tag = 2
-	////dept.Addr = "this is for two"
-	////n, err := dao.UpdateDeptInfoByFuncStruct(dept)
-	////if err != nil {
-	////	t.Error(err)
-	////	return
-	////}
-	////fmt.Println(n)
-	//
+	//////dept.ID = 2
+	//////dept.Tag = 2
+	//////dept.Addr = "this is for two"
+	//////n, err := dao.UpdateDeptInfoByFuncStruct(dept)
+	//////if err != nil {
+	//////	t.Error(err)
+	//////	return
+	//////}
+	//////fmt.Println(n)
+	////
 	//dept.Name = "计算机科学与技术"
 	//dept.Addr = "http://www.baidu.com"
 	//dept.Tag = 3
@@ -123,12 +123,12 @@ func TestGetGetDB(t *testing.T) {
 	//fmt.Println(n)
 
 	// delete info from dept
-	depno := int64(5)
-	n, err := dao.DeptDeleteByDepNo(depno)
-	if err != nil {
-		t.Error(err)
-		return
-	}
-	fmt.Println(n)
+	//depno := int64(5)
+	//n, err := dao.DeptDeleteByDepNo(depno)
+	//if err != nil {
+	//	t.Error(err)
+	//	return
+	//}
+	//fmt.Println(n)
 
 }

@@ -1,6 +1,7 @@
 package dao
 
 import (
+	"code.dncmn.io/web-macaron/config"
 	"code.dncmn.io/web-macaron/model"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
@@ -10,19 +11,26 @@ import (
 
 var (
 	engine *xorm.Engine
+	dns    = fmt.Sprintf(
+		"%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
+		config.Config.Mysql.Username,
+		config.Config.Mysql.Password,
+		config.Config.Mysql.Host,
+		config.Config.Mysql.Dbname,
+	)
 )
 
 func init() {
 	var err error
-	engine, err = xorm.NewEngine("mysql", "root:123456@tcp(127.0.0.1:3306)/game?charset=utf8&parseTime=True&loc=Local")
+	engine, err = xorm.NewEngine("mysql", dns)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	engine.SetMaxIdleConns(100)
-	engine.SetMaxOpenConns(100)
-	engine.SetConnMaxLifetime(100)
+	engine.SetMaxIdleConns(config.Config.Mysql.GOMaxIdleConns)
+	engine.SetMaxOpenConns(config.Config.Mysql.MaxOpenConns)
+	engine.SetConnMaxLifetime(config.Config.Mysql.ConnMaxLifetime)
 
 	engine.SetLogger(engine.Logger())
 	engine.ShowSQL(true)

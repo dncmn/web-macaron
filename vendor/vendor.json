@@ -47,6 +47,12 @@
 			"path": "gopkg.in/macaron.v1",
 			"revision": "dfcb80ca86e8534962c62812efd93209c7e600e7",
 			"revisionTime": "2018-12-17T00:30:54Z"
+		},
+		{
+			"checksumSHA1": "QqDq2x8XOU7IoOR98Cx1eiV5QY8=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "51d6538a90f86fe93ac480b35f37b2be17fef232",
+			"revisionTime": "2018-11-15T11:05:04Z"
 		}
 	],
 	"rootPath": "code.dncmn.io/web-macaron"
