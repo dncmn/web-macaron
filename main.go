@@ -2,6 +2,7 @@ package main
 
 import (
 	"code.dncmn.io/web-macaron/controller"
+	_ "code.dncmn.io/web-macaron/dao"
 	"code.dncmn.io/web-macaron/router"
 	"gopkg.in/macaron.v1"
 )
@@ -17,7 +18,6 @@ func main() {
 		m.Get("/username", controller.GetUserInfoHandler)
 		m.Get("/userByUID/:uid", controller.GetUserByUIDHandler)
 		m.Post("", controller.UserRegisterHancler)
-
 	})
 	m.Group("/c", router.UserRouter)
 	m.Run("localhost", 9002)

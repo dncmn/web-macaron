@@ -29,7 +29,7 @@ func UserRegisterHancler(c *macaron.Context) {
 		resp interface{}
 	)
 
-	defer SendJson(c, resp)
+	//defer SendJson(c, resp)
 	if err = BindXml(c, &req); err != nil {
 		fmt.Println(err)
 		return
@@ -38,6 +38,7 @@ func UserRegisterHancler(c *macaron.Context) {
 	resp = map[string]interface{}{
 		"age": 2019,
 	}
+	SendJson(c, resp)
 	return
 }
 
