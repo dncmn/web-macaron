@@ -27,6 +27,12 @@
 			"revisionTime": "2019-05-10T10:23:35Z"
 		},
 		{
+			"checksumSHA1": "SDGV6UncHCFRwG62e47ypnle7s0=",
+			"path": "github.com/go-xorm/xorm",
+			"revision": "c9b14f9487006ec5f7638cd5f08d2c988b0ebd76",
+			"revisionTime": "2019-06-17T05:38:13Z"
+		},
+		{
 			"checksumSHA1": "1MGpGDQqnUoRpv7VEcQrXOBydXE=",
 			"path": "golang.org/x/crypto/pbkdf2",
 			"revision": "5c40567a22f818bd14a1ea7245dad9f8ef0691aa",
@@ -53,6 +59,18 @@
 			"path": "gopkg.in/yaml.v2",
 			"revision": "51d6538a90f86fe93ac480b35f37b2be17fef232",
 			"revisionTime": "2018-11-15T11:05:04Z"
+		},
+		{
+			"checksumSHA1": "G5VmTYGfjOSCgoRS2GYtrTDrw80=",
+			"path": "xorm.io/builder",
+			"revision": "5175e98d9e97da33b5b8234760b151d867cb2620",
+			"revisionTime": "2019-06-17T05:21:32Z"
+		},
+		{
+			"checksumSHA1": "pyg9iAE7W6MXl3mBpHb/RHsQIJw=",
+			"path": "xorm.io/core",
+			"revision": "a31f53637037b3461649b8a9a03e13b26d31f12d",
+			"revisionTime": "2019-06-17T05:27:01Z"
 		}
 	],
 	"rootPath": "code.dncmn.io/web-macaron"
