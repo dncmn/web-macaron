@@ -5,7 +5,21 @@ import (
 	"encoding/xml"
 	"fmt"
 	"gopkg.in/macaron.v1"
+	"net/http"
 )
+
+// SendJson:response json body
+func SendJson(c *macaron.Context, v interface{}) {
+	cnt, err := json.Marshal(v)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Printf("response body.url[%s],body=[%v]", c.Req.RequestURI, string(cnt))
+	c.JSON(http.StatusOK, v)
+	return
+}
 
 // BindXml: parse requestBody into resp by xml
 func BindXml(c *macaron.Context, resp interface{}) (err error) {

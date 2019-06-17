@@ -24,15 +24,20 @@ type UserRegisterXMLReq struct {
 // UserRegisterHancler:用户注册
 func UserRegisterHancler(c *macaron.Context) {
 	var (
-		err error
-		req UserRegisterJsonReq
+		err  error
+		req  UserRegisterJsonReq
+		resp interface{}
 	)
+
+	defer SendJson(c, resp)
 	if err = BindXml(c, &req); err != nil {
 		fmt.Println(err)
 		return
 	}
 	fmt.Printf("username=%v,age=%v,all=%v\n", req.Name, req.Age, req)
-	c.JSON(http.StatusOK, req)
+	resp = map[string]interface{}{
+		"age": 2019,
+	}
 	return
 }
 
