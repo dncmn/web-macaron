@@ -1,4 +1,4 @@
-package xorm_log
+package sllog
 
 // RFC5424 log message levels.
 const (

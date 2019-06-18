@@ -1,4 +1,4 @@
-package xorm_log
+package sllog
 
 import (
 	"errors"

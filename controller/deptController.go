@@ -34,6 +34,7 @@ func InsertNewDeptHandler(c *macaron.Context) {
 		SendJson(c, nil)
 		return
 	}
+	logger.Infof("name=%s,addr=%s,body=%v", body.Name, body.Addr, body)
 
 	if err = service.AddNewDept(body); err != nil {
 		fmt.Println(err)
