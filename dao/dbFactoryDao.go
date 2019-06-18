@@ -6,6 +6,7 @@ import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/xorm"
+	//"github.com/dncmn/xorm-log"
 	"os"
 )
 
@@ -31,9 +32,9 @@ func init() {
 	engine.SetMaxIdleConns(config.Config.Mysql.GOMaxIdleConns)
 	engine.SetMaxOpenConns(config.Config.Mysql.MaxOpenConns)
 	engine.SetConnMaxLifetime(config.Config.Mysql.ConnMaxLifetime)
-
+	engine.ShowSQL()
+	engine.ShowExecTime()
 	engine.SetLogger(engine.Logger())
-	engine.ShowSQL(true)
 
 	if os.Getenv("MIGRATE_DB") == "true" {
 		err = engine.Sync2(new(model.ConfigDept))

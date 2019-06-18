@@ -15,6 +15,12 @@
 			"revisionTime": "2019-06-17T03:07:37Z"
 		},
 		{
+			"checksumSHA1": "bc/eO0LGiFjojvDl5JFeg9YZwOo=",
+			"path": "github.com/dncmn/xorm-log",
+			"revision": "476a17f2a5b5d8fd1c60994bd6c086731e9efc3b",
+			"revisionTime": "2019-06-17T16:06:45Z"
+		},
+		{
 			"checksumSHA1": "y0olVbiMQ6/UOa/eh52XYnies90=",
 			"path": "github.com/go-macaron/inject",
 			"revision": "d8a0b8677191f4380287cfebd08e462217bac7ad",
@@ -27,16 +33,40 @@
 			"revisionTime": "2019-05-10T10:23:35Z"
 		},
 		{
+			"checksumSHA1": "r+ATmIuQ0ocNp7T8SZsb2fx6AFA=",
+			"path": "github.com/go-xorm/core",
+			"revision": "a31f53637037b3461649b8a9a03e13b26d31f12d",
+			"revisionTime": "2019-06-17T05:27:01Z"
+		},
+		{
 			"checksumSHA1": "SDGV6UncHCFRwG62e47ypnle7s0=",
 			"path": "github.com/go-xorm/xorm",
 			"revision": "c9b14f9487006ec5f7638cd5f08d2c988b0ebd76",
 			"revisionTime": "2019-06-17T05:38:13Z"
 		},
 		{
+			"checksumSHA1": "Aulh7C5SVOA4Jzt5eHNH6197Mbk=",
+			"path": "github.com/konsorten/go-windows-terminal-sequences",
+			"revision": "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e",
+			"revisionTime": "2019-02-26T22:47:05Z"
+		},
+		{
+			"checksumSHA1": "SVO+Zm6SNwWrpgyc6mcTXbH4aJ8=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "2a22dbedbad1fd454910cd1f44f210ef90c28464",
+			"revisionTime": "2019-05-18T13:52:02Z"
+		},
+		{
 			"checksumSHA1": "1MGpGDQqnUoRpv7VEcQrXOBydXE=",
 			"path": "golang.org/x/crypto/pbkdf2",
 			"revision": "5c40567a22f818bd14a1ea7245dad9f8ef0691aa",
 			"revisionTime": "2019-06-11T18:31:17Z"
+		},
+		{
+			"checksumSHA1": "T12uSKTjWMagbOOWAPO7JnfqQss=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "15dcb6c0061f497a3f66e3ea034b629c6dd4d99e",
+			"revisionTime": "2019-06-15T12:11:14Z"
 		},
 		{
 			"path": "google.golang.org/appengine/cloudsql",

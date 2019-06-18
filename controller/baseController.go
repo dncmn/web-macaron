@@ -1,11 +1,16 @@
 package controller
 
 import (
+	"bufio"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
 	"gopkg.in/macaron.v1"
 	"net/http"
+)
+
+var (
+	logger = macaron.NewWithLogger(bufio.NewWriter(nil))
 )
 
 // SendJson:response json body
@@ -16,7 +21,7 @@ func SendJson(c *macaron.Context, v interface{}) {
 		return
 	}
 
-	fmt.Printf("response body.url[%s],body=[%v]", c.Req.RequestURI, string(cnt))
+	fmt.Printf("response body.url[%s],body=[%v]\n", c.Req.RequestURI, string(cnt))
 	c.JSON(http.StatusOK, v)
 	return
 }
@@ -26,7 +31,7 @@ func BindXml(c *macaron.Context, resp interface{}) (err error) {
 	var (
 		cntBytes []byte
 	)
-	fmt.Printf("start parse param url[%s] into [%v]\n", c.Req.RequestURI, resp)
+	fmt.Printf("start parse param url[%s] into [%v]\n", c.Req.URL.String(), resp)
 	cntBytes, err = c.Req.Body().Bytes()
 	if err != nil {
 		fmt.Printf("read content from url[%v],err[]%v\n", c.Req.RequestURI, err)
